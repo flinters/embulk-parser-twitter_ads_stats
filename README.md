@@ -1,6 +1,10 @@
 # Twitter Ads Stats parser plugin for Embulk
 
-[Twitter Ads Stats](https://developer.twitter.com/en/docs/ads/analytics/overview/metrics-and-segmentation)
+This plugin parse [Twitter Ads Stats](https://developer.twitter.com/en/docs/ads/analytics/overview/metrics-and-segmentation) json file.
+
+##Parse Logic
+1. Flatten to metrics by date.
+2. Group Metrics into Metrics Group by json type.
 
 ## Overview
 
@@ -9,75 +13,16 @@
 
 ## Configuration
 
-- **stop_on_invalid_record**: Stop bulk load transaction if a file includes invalid record (such as invalid timestamp) (boolean, default: false)
+- **stop_on_invalid_record**  
+Stop bulk load transaction if a file includes invalid record (such as invalid timestamp) (boolean, default: false)
 
 ## Example
 
-#### Basic Usage
+#### Input File
+I suppose this kind of [input file](https://github.com/kimutyam/embulk-parser-twitter_ads_stats/tree/master/src/test/resources/test.json).
 
-```
-{
-  "data": [
-    {
-      "id": "xxxxx",
-      "id_data": [
-        {
-          "metrics": {
-            "billed_engagements": [
-              510,
-              494,
-              364
-            ],
-            "billed_charge_local_micro": null,
-            "mobile_conversion_spent_credits": {
-              "post_view": null,
-              "post_engagement": null
-            },
-            "conversion_purchases": {
-              "assisted": [
-                2,
-                3,
-                4
-              ],
-              "metric": [
-                12,
-                19,
-                13
-              ]
-            }
-          }
-        }
-      ]
-    }
-  ],
-  "data_type": "stats",
-  "request": {
-    "params": {
-      "country": null,
-      "end_time": "2017-08-28T15:00:00Z",
-      "entity": "CAMPAIGN",
-      "entity_ids": [
-        "xxxxx"
-      ],
-      "granularity": "DAY",
-      "metric_groups": [
-        "BILLING",
-        "ENGAGEMENT",
-        "LIFE_TIME_VALUE_MOBILE_CONVERSION",
-        "MEDIA",
-        "MOBILE_CONVERSION",
-        "VIDEO",
-        "WEB_CONVERSION"
-      ],
-      "placement": "ALL_ON_TWITTER",
-      "platform": null,
-      "segmentation_type": null,
-      "start_time": "2017-08-20T15:00:00Z"
-    }
-  },
-  "time_series_length": 8
-}
-```
+
+#### YML 
 
 ```yaml
 in:
@@ -87,8 +32,34 @@ in:
     stop_on_invalid_record: true
 ```
 
-"time_series_length" determines the length of the array of "metrics".
-If there is no key in the order of "time_series_length", it is judged as invalid record
+#### Preview Result 
+
+```
+*************************** 1 ***************************
+               id (string) : xxxxx
+             date (string) : 2017-08-20
+          segment (string) :
+        placement (string) : ALL_ON_TWITTER
+          billing (  json) : {"billed_charge_local_micro":100000000000,"billed_engagements":100}
+       engagement (  json) : {"likes":1,"engagements":1,"app_clicks":100,"clicks":100,"card_engagements":100,"qualified_impressions":null,"retweets":1,"impressions":1,"follows":1,"replies":1,"url_clicks":1}
+            media (  json) : {"media_engagements":1,"media_views":1}
+mobile_conversion (  json) : {"mobile_conversion_rates_order_quantity":null,"mobile_conversion_content_views_post_view":null,"mobile_conversion_tutorials_completed_assisted":null,"mobile_conversion_shares_post_engagement":null,"mobile_conversion_checkouts_initiated_order_quantity":null,"mobile_conversion_searches_order_quantity":null,"mobile_conversion_add_to_carts_assisted":null,"mobile_conversion_tutorials_completed_order_quantity":null,"mobile_conversion_searches_assisted":null,"mobile_conversion_key_page_views_assisted":null,"mobile_conversion_achievements_unlocked_sale_amount":null,"mobile_conversion_payment_info_additions_assisted":null,"mobile_conversion_spent_credits_post_engagement":null,"mobile_conversion_rates_post_engagement":null,"mobile_conversion_installs_order_quantity":null,"mobile_conversion_checkouts_initiated_post_view":null,"mobile_conversion_add_to_carts_post_engagement":null,"mobile_conversion_logins_assisted":1,"mobile_conversion_reservations_assisted":null,"mobile_conversion_add_to_carts_sale_amount":null,"mobile_conversion_shares_assisted":null,"mobile_conversion_content_views_sale_amount":null,"mobile_conversion_reservations_post_view":null,"mobile_conversion_reservations_post_engagement":null,"mobile_conversion_shares_order_quantity":null,"mobile_conversion_key_page_views_post_view":null,"mobile_conversion_content_views_assisted":null,"mobile_conversion_add_to_wishlists_assisted":null,"mobile_conversion_content_views_order_quantity":null,"mobile_conversion_spent_credits_order_quantity":null,"mobile_conversion_key_page_views_post_engagement":null,"mobile_conversion_levels_achieved_order_quantity":null,"mobile_conversion_updates_post_engagement":null,"mobile_conversion_tutorials_completed_post_view":null,"mobile_conversion_achievements_unlocked_order_quantity":null,"mobile_conversion_shares_post_view":null,"mobile_conversion_payment_info_additions_sale_amount":null,"mobile_conversion_add_to_wishlists_sale_amount":null,"mobile_conversion_achievements_unlocked_post_engagement":null,"mobile_conversion_updates_sale_amount":null,"mobile_conversion_payment_info_additions_order_quantity":null,"mobile_conversion_key_page_views_order_quantity_order_quantity":null,"mobile_conversion_rates_assisted":null,"mobile_conversion_logins_post_view":null,"mobile_conversion_levels_achieved_sale_amount":null,"mobile_conversion_updates_order_quantity":null,"mobile_conversion_re_engages_order_quantity":null,"mobile_conversion_invites_order_quantity":null,"mobile_conversion_logins_post_engagement":1,"mobile_conversion_key_page_views_sale_amount":null,"mobile_conversion_content_views_post_engagement":null,"mobile_conversion_re_engages_post_view":null,"mobile_conversion_add_to_wishlists_post_engagement":null,"mobile_conversion_add_to_carts_post_view":null,"mobile_conversion_tutorials_completed_sale_amount":null,"mobile_conversion_spent_credits_sale_amount":null,"mobile_conversion_payment_info_additions_post_view":null,"mobile_conversion_logins_sale_amount":null,"mobile_conversion_installs_assisted":1,"mobile_conversion_re_engages_post_engagement":1,"mobile_conversion_shares_sale_amount":null,"mobile_conversion_installs_post_engagement":1,"mobile_conversion_reservations_order_quantity":null,"mobile_conversion_add_to_wishlists_order_quantity":null,"mobile_conversion_add_to_wishlists_post_view":null,"mobile_conversion_searches_post_view":null,"mobile_conversion_invites_sale_amount":null,"mobile_conversion_achievements_unlocked_assisted":null,"mobile_conversion_achievements_unlocked_post_view":null,"mobile_conversion_invites_assisted":null,"mobile_conversion_levels_achieved_post_engagement":null,"mobile_conversion_add_to_carts_order_quantity":null,"mobile_conversion_levels_achieved_assisted":null,"mobile_conversion_spent_credits_assisted":null,"mobile_conversion_spent_credits_post_view":null,"mobile_conversion_installs_sale_amount":null,"mobile_conversion_updates_assisted":null,"mobile_conversion_installs_post_view":null,"mobile_conversion_searches_sale_amount":null,"mobile_conversion_checkouts_initiated_post_engagement":null,"mobile_conversion_rates_post_view":null,"mobile_conversion_levels_achieved_post_view":null,"mobile_conversion_reservations_sale_amount":null,"mobile_conversion_tutorials_completed_post_engagement":null,"mobile_conversion_logins_order_quantity":null,"mobile_conversion_re_engages_assisted":1,"mobile_conversion_re_engages_sale_amount":null,"mobile_conversion_checkouts_initiated_sale_amount":null,"mobile_conversion_checkouts_initiated_assisted":null,"mobile_conversion_rates_sale_amount":null,"mobile_conversion_updates_post_view":null,"mobile_conversion_invites_post_engagement":null,"mobile_conversion_payment_info_additions_post_engagement":null,"mobile_conversion_invites_post_view":null,"mobile_conversion_searches_post_engagement":null}
+            video (  json) : {"video_views_75":1,"video_total_views":1,"video_mrc_views":1,"video_3s100pct_views":1,"video_cta_clicks":null,"video_views_100":1,"video_views_50":1,"video_views_25":1,"video_content_starts":1}
+   web_conversion (  json) : {"conversion_site_visits_order_quantity_engagement":null,"conversion_downloads_post_view":null,"conversion_purchases_order_quantity":null,"conversion_purchases_metric":1,"conversion_sign_ups_metric":null,"conversion_site_visits_post_view":null,"conversion_custom_sale_amount":null,"conversion_custom_post_view":null,"conversion_downloads_order_quantity_engagement":null,"conversion_sign_ups_post_view":null,"conversion_custom_sale_amount_engagement":null,"conversion_sign_ups_sale_amount_view":null,"conversion_sign_ups_assisted":null,"conversion_custom_order_quantity_engagement":null,"conversion_custom_order_quantity":null,"conversion_purchases_assisted":1,"conversion_sign_ups_order_quantity_view":null,"conversion_sign_ups_sale_amount":null,"conversion_downloads_post_engagement":null,"conversion_site_visits_assisted":null,"conversion_downloads_sale_amount_engagement":null,"conversion_sign_ups_order_quantity_engagement":null,"conversion_purchases_post_engagement":1,"conversion_sign_ups_order_quantity":null,"conversion_custom_order_quantity_view":null,"conversion_purchases_sale_amount_view":null,"conversion_custom_post_engagement":null,"conversion_site_visits_order_quantity_view":null,"conversion_site_visits_sale_amount_view":null,"conversion_downloads_assisted":null,"conversion_downloads_metric":null,"conversion_purchases_post_view":null,"conversion_downloads_sale_amount":null,"conversion_downloads_sale_amount_view":null,"conversion_site_visits_sale_amount_engagement":null,"conversion_site_visits_sale_amount":null,"conversion_site_visits_metric":1,"conversion_purchases_sale_amount_engagement":null,"conversion_custom_assisted":null,"conversion_sign_ups_post_engagement":null,"conversion_purchases_order_quantity_view":null,"conversion_downloads_order_quantity":null,"conversion_custom_metric":null,"conversion_custom_sale_amount_view":null,"conversion_site_visits_post_engagement":1,"conversion_purchases_sale_amount":100000000,"conversion_downloads_order_quantity_view":null,"conversion_site_visits_order_quantity":null,"conversion_purchases_order_quantity_engagement":null,"conversion_sign_ups_sale_amount_engagement":null}
+*************************** 2 ***************************
+               id (string) : xxxxx
+             date (string) : 2017-08-21
+          segment (string) :
+        placement (string) : ALL_ON_TWITTER
+          billing (  json) : {"billed_charge_local_micro":200000000000,"billed_engagements":200}
+       engagement (  json) : {"likes":2,"engagements":2,"app_clicks":200,"clicks":200,"card_engagements":200,"qualified_impressions":null,"retweets":2,"impressions":2,"follows":2,"replies":2,"url_clicks":2}
+            media (  json) : {"media_engagements":2,"media_views":2}
+mobile_conversion (  json) : {"mobile_conversion_rates_order_quantity":null,"mobile_conversion_content_views_post_view":null,"mobile_conversion_tutorials_completed_assisted":null,"mobile_conversion_shares_post_engagement":null,"mobile_conversion_checkouts_initiated_order_quantity":null,"mobile_conversion_searches_order_quantity":null,"mobile_conversion_add_to_carts_assisted":null,"mobile_conversion_tutorials_completed_order_quantity":null,"mobile_conversion_searches_assisted":null,"mobile_conversion_key_page_views_assisted":null,"mobile_conversion_achievements_unlocked_sale_amount":null,"mobile_conversion_payment_info_additions_assisted":null,"mobile_conversion_spent_credits_post_engagement":null,"mobile_conversion_rates_post_engagement":null,"mobile_conversion_installs_order_quantity":null,"mobile_conversion_checkouts_initiated_post_view":null,"mobile_conversion_add_to_carts_post_engagement":null,"mobile_conversion_logins_assisted":2,"mobile_conversion_reservations_assisted":null,"mobile_conversion_add_to_carts_sale_amount":null,"mobile_conversion_shares_assisted":null,"mobile_conversion_content_views_sale_amount":null,"mobile_conversion_reservations_post_view":null,"mobile_conversion_reservations_post_engagement":null,"mobile_conversion_shares_order_quantity":null,"mobile_conversion_key_page_views_post_view":null,"mobile_conversion_content_views_assisted":null,"mobile_conversion_add_to_wishlists_assisted":null,"mobile_conversion_content_views_order_quantity":null,"mobile_conversion_spent_credits_order_quantity":null,"mobile_conversion_key_page_views_post_engagement":null,"mobile_conversion_levels_achieved_order_quantity":null,"mobile_conversion_updates_post_engagement":null,"mobile_conversion_tutorials_completed_post_view":null,"mobile_conversion_achievements_unlocked_order_quantity":null,"mobile_conversion_shares_post_view":null,"mobile_conversion_payment_info_additions_sale_amount":null,"mobile_conversion_add_to_wishlists_sale_amount":null,"mobile_conversion_achievements_unlocked_post_engagement":null,"mobile_conversion_updates_sale_amount":null,"mobile_conversion_payment_info_additions_order_quantity":null,"mobile_conversion_key_page_views_order_quantity_order_quantity":null,"mobile_conversion_rates_assisted":null,"mobile_conversion_logins_post_view":null,"mobile_conversion_levels_achieved_sale_amount":null,"mobile_conversion_updates_order_quantity":null,"mobile_conversion_re_engages_order_quantity":null,"mobile_conversion_invites_order_quantity":null,"mobile_conversion_logins_post_engagement":2,"mobile_conversion_key_page_views_sale_amount":null,"mobile_conversion_content_views_post_engagement":null,"mobile_conversion_re_engages_post_view":null,"mobile_conversion_add_to_wishlists_post_engagement":null,"mobile_conversion_add_to_carts_post_view":null,"mobile_conversion_tutorials_completed_sale_amount":null,"mobile_conversion_spent_credits_sale_amount":null,"mobile_conversion_payment_info_additions_post_view":null,"mobile_conversion_logins_sale_amount":null,"mobile_conversion_installs_assisted":2,"mobile_conversion_re_engages_post_engagement":2,"mobile_conversion_shares_sale_amount":null,"mobile_conversion_installs_post_engagement":2,"mobile_conversion_reservations_order_quantity":null,"mobile_conversion_add_to_wishlists_order_quantity":null,"mobile_conversion_add_to_wishlists_post_view":null,"mobile_conversion_searches_post_view":null,"mobile_conversion_invites_sale_amount":null,"mobile_conversion_achievements_unlocked_assisted":null,"mobile_conversion_achievements_unlocked_post_view":null,"mobile_conversion_invites_assisted":null,"mobile_conversion_levels_achieved_post_engagement":null,"mobile_conversion_add_to_carts_order_quantity":null,"mobile_conversion_levels_achieved_assisted":null,"mobile_conversion_spent_credits_assisted":null,"mobile_conversion_spent_credits_post_view":null,"mobile_conversion_installs_sale_amount":null,"mobile_conversion_updates_assisted":null,"mobile_conversion_installs_post_view":null,"mobile_conversion_searches_sale_amount":null,"mobile_conversion_checkouts_initiated_post_engagement":null,"mobile_conversion_rates_post_view":null,"mobile_conversion_levels_achieved_post_view":null,"mobile_conversion_reservations_sale_amount":null,"mobile_conversion_tutorials_completed_post_engagement":null,"mobile_conversion_logins_order_quantity":null,"mobile_conversion_re_engages_assisted":2,"mobile_conversion_re_engages_sale_amount":null,"mobile_conversion_checkouts_initiated_sale_amount":null,"mobile_conversion_checkouts_initiated_assisted":null,"mobile_conversion_rates_sale_amount":null,"mobile_conversion_updates_post_view":null,"mobile_conversion_invites_post_engagement":null,"mobile_conversion_payment_info_additions_post_engagement":null,"mobile_conversion_invites_post_view":null,"mobile_conversion_searches_post_engagement":null}
+            video (  json) : {"video_views_75":2,"video_total_views":2,"video_mrc_views":2,"video_3s100pct_views":2,"video_cta_clicks":null,"video_views_100":2,"video_views_50":2,"video_views_25":2,"video_content_starts":2}
+   web_conversion (  json) : {"conversion_site_visits_order_quantity_engagement":null,"conversion_downloads_post_view":null,"conversion_purchases_order_quantity":null,"conversion_purchases_metric":2,"conversion_sign_ups_metric":null,"conversion_site_visits_post_view":null,"conversion_custom_sale_amount":null,"conversion_custom_post_view":null,"conversion_downloads_order_quantity_engagement":null,"conversion_sign_ups_post_view":null,"conversion_custom_sale_amount_engagement":null,"conversion_sign_ups_sale_amount_view":null,"conversion_sign_ups_assisted":null,"conversion_custom_order_quantity_engagement":null,"conversion_custom_order_quantity":null,"conversion_purchases_assisted":2,"conversion_sign_ups_order_quantity_view":null,"conversion_sign_ups_sale_amount":null,"conversion_downloads_post_engagement":null,"conversion_site_visits_assisted":null,"conversion_downloads_sale_amount_engagement":null,"conversion_sign_ups_order_quantity_engagement":null,"conversion_purchases_post_engagement":2,"conversion_sign_ups_order_quantity":null,"conversion_custom_order_quantity_view":null,"conversion_purchases_sale_amount_view":null,"conversion_custom_post_engagement":null,"conversion_site_visits_order_quantity_view":null,"conversion_site_visits_sale_amount_view":null,"conversion_downloads_assisted":null,"conversion_downloads_metric":null,"conversion_purchases_post_view":null,"conversion_downloads_sale_amount":null,"conversion_downloads_sale_amount_view":null,"conversion_site_visits_sale_amount_engagement":null,"conversion_site_visits_sale_amount":null,"conversion_site_visits_metric":2,"conversion_purchases_sale_amount_engagement":null,"conversion_custom_assisted":null,"conversion_sign_ups_post_engagement":null,"conversion_purchases_order_quantity_view":null,"conversion_downloads_order_quantity":null,"conversion_custom_metric":null,"conversion_custom_sale_amount_view":null,"conversion_site_visits_post_engagement":2,"conversion_purchases_sale_amount":200000000,"conversion_downloads_order_quantity_view":null,"conversion_site_visits_order_quantity":null,"conversion_purchases_order_quantity_engagement":null,"conversion_sign_ups_sale_amount_engagement":null}
+*************************** 3 ***************************
+....
+```
 
 ## Build
 
