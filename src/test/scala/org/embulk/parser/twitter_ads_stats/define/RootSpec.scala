@@ -22,11 +22,14 @@ class RootSpec extends UnitSpec {
           "media" -> Map(
             "media_views" -> Some(1),
             "media_engagements" -> None
-          ), "billing" ->
-            Map(
-              "billed_engagements" -> Some(1),
-              "billed_charge_local_micro" -> Some(1)
-            )
+          ),
+          "billing" -> Map(
+            "billed_engagements" -> Some(1),
+            "billed_charge_local_micro" -> Some(1)
+          ),
+          "web_conversion" -> Map(
+            "conversion_purchases_assisted" -> Some(1)
+          )
         )
       ),
       Column(
@@ -42,6 +45,9 @@ class RootSpec extends UnitSpec {
           "billing" -> Map(
             "billed_engagements" -> Some(2),
             "billed_charge_local_micro" -> Some(2)
+          ),
+          "web_conversion" -> Map(
+            "conversion_purchases_assisted" -> Some(2)
           )
         )
       ),
@@ -55,11 +61,13 @@ class RootSpec extends UnitSpec {
             "media_views" -> Some(10),
             "media_engagements" -> None
           ),
-          "billing" ->
-            Map(
+          "billing" -> Map(
               "billed_engagements" -> Some(10),
               "billed_charge_local_micro" -> Some(10)
-            )
+            ),
+          "web_conversion" -> Map(
+            "conversion_purchases_assisted" -> Some(10)
+          )
         )
       ),
       Column(
@@ -75,6 +83,9 @@ class RootSpec extends UnitSpec {
           "billing" -> Map(
             "billed_engagements" -> Some(20),
             "billed_charge_local_micro" -> Some(20)
+          ),
+          "web_conversion" -> Map(
+            "conversion_purchases_assisted" -> Some(20)
           )
         )
       ),
@@ -88,11 +99,13 @@ class RootSpec extends UnitSpec {
             "media_views" -> Some(1),
             "media_engagements" -> None
           ),
-          "billing" ->
-            Map(
+          "billing" -> Map(
               "billed_engagements" -> Some(1),
               "billed_charge_local_micro" -> Some(1)
-            )
+            ),
+          "web_conversion" -> Map(
+            "conversion_purchases_assisted" -> Some(1)
+          )
         )
       ),
       Column(
@@ -108,6 +121,9 @@ class RootSpec extends UnitSpec {
           "billing" -> Map(
             "billed_engagements" -> Some(2),
             "billed_charge_local_micro" -> Some(2)
+          ),
+          "web_conversion" -> Map(
+            "conversion_purchases_assisted" -> Some(2)
           )
         )
       ),
@@ -121,11 +137,13 @@ class RootSpec extends UnitSpec {
             "media_views" -> Some(10),
             "media_engagements" -> None
           ),
-          "billing" ->
-            Map(
+          "billing" -> Map(
               "billed_engagements" -> Some(10),
               "billed_charge_local_micro" -> Some(10)
-            )
+            ),
+          "web_conversion" -> Map(
+            "conversion_purchases_assisted" -> Some(10)
+          )
         )
       ),
       Column(
@@ -141,6 +159,9 @@ class RootSpec extends UnitSpec {
           "billing" -> Map(
             "billed_engagements" -> Some(20),
             "billed_charge_local_micro" -> Some(20)
+          ),
+          "web_conversion" -> Map(
+            "conversion_purchases_assisted" -> Some(20)
           )
         )
       )
@@ -263,7 +284,8 @@ object RootSpec {
                   "billed_engagements" -> Some(Vector(1, 2)),
                   "billed_charge_local_micro" -> Some(Vector(1, 2)),
                   "media_views" -> Some(Vector(1, 2)),
-                  "media_engagements" -> None
+                  "media_engagements" -> None,
+                  "conversion_purchases_assisted" -> Some(Vector(1, 2))
                 )
               ),
               segment = None
@@ -274,7 +296,8 @@ object RootSpec {
                   "billed_engagements" -> Some(Vector(10, 20)),
                   "billed_charge_local_micro" -> Some(Vector(10, 20)),
                   "media_views" -> Some(Vector(10, 20)),
-                  "media_engagements" -> None
+                  "media_engagements" -> None,
+                  "conversion_purchases_assisted" -> Some(Vector(10, 20))
                 )
               ),
               segment = None
@@ -291,6 +314,7 @@ object RootSpec {
                   "billed_charge_local_micro" -> Some(Vector(1, 2)),
                   "media_views" -> Some(Vector(1, 2)),
                   "media_engagements" -> None,
+                  "conversion_purchases_assisted" -> Some(Vector(1, 2))
                 )
               ),
               segment = None
@@ -302,6 +326,7 @@ object RootSpec {
                   "billed_charge_local_micro" -> Some(Vector(10, 20)),
                   "media_views" -> Some(Vector(10, 20)),
                   "media_engagements" -> None,
+                  "conversion_purchases_assisted" -> Some(Vector(10, 20))
                 )
               ),
               segment = None
@@ -322,6 +347,9 @@ object RootSpec {
       "media" -> Seq(
         "media_views",
         "media_engagements"
+      ),
+      "web_conversion" -> Seq(
+        "conversion_purchases.assisted"
       )
     )
   )

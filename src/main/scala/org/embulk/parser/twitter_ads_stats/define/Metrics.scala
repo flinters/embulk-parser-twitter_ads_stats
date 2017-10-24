@@ -12,7 +12,7 @@ case class Metrics(map: Map[String, MetricTimeSeries]) {
         val n = MetricElementNames.replaceSeparator(name)
         (
           n,
-          map.get(name).flatten.map(v => v(index))
+          map.get(n).flatten.map(v => v(index))
         )
       }.toMap
       Right(metricsGroup)
