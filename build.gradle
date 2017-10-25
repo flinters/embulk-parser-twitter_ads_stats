@@ -13,7 +13,7 @@ configurations {
     provided
 }
 
-version = "0.1.0"
+version = "0.1.1"
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
@@ -64,7 +64,7 @@ Gem::Specification.new do |spec|
   spec.description   = %[Parses Twitter Ads Stats files read by other file input plugins.]
   spec.email         = ["devkimura@gmail.com"]
   spec.licenses      = ["MIT"]
-  spec.homepage      = "https://github.com/kimutyam/embulk-parser-twitter_ads_stats"
+  spec.homepage      = "https://github.com/septeni-original/embulk-parser-twitter_ads_stats"
   spec.files         = `git ls-files`.split("\n") + Dir["classpath/*.jar"]
   spec.test_files    = spec.files.grep(%r"^(test|spec)/")
   spec.require_paths = ["lib"]

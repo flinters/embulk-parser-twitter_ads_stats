@@ -19,7 +19,7 @@ Stop bulk load transaction if a file includes invalid record (such as invalid ti
 ## Example
 
 #### Input File
-I suppose this kind of [input file](https://github.com/kimutyam/embulk-parser-twitter_ads_stats/tree/master/src/test/resources/test.json).
+I suppose this kind of [input file](https://github.com/septeni-original/embulk-parser-twitter_ads_stats/blob/master/src/test/resources/test.json).
 
 
 #### YML 
