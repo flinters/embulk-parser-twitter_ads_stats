@@ -1,5 +1,7 @@
 # Twitter Ads Stats parser plugin for Embulk
 
+[![Build Status](https://travis-ci.org/septeni-original/embulk-parser-twitter_ads_stats.svg?branch=ci)](https://travis-ci.org/septeni-original/embulk-parser-twitter_ads_stats)
+
 This plugin parse [Twitter Ads Stats](https://developer.twitter.com/en/docs/ads/analytics/overview/metrics-and-segmentation) json file.
 
 ##Parse Logic
