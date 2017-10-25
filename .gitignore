@@ -1,0 +1,21 @@
+*~
+/pkg/
+/tmp/
+*.gemspec
+.gradle/
+/classpath/
+build/
+.idea
+/.settings/
+/.metadata/
+.classpath
+.project
+
+target/
+
+# idea
+*.iml
+.idea
+
+# mac
+.DS_Store

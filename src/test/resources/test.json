@@ -1,0 +1,759 @@
+{
+  "data": [
+    {
+      "id": "xxxxx",
+      "id_data": [
+        {
+          "metrics": {
+            "app_clicks": [
+              100,
+              200,
+              300,
+              400,
+              500,
+              600,
+              700,
+              800
+            ],
+            "auto_created_conversion_add_to_cart": null,
+            "auto_created_conversion_add_to_wish_list": null,
+            "auto_created_conversion_added_payment_info": null,
+            "auto_created_conversion_checkout_initiated": null,
+            "auto_created_conversion_complete_registration": null,
+            "auto_created_conversion_content_view": null,
+            "auto_created_conversion_download": null,
+            "auto_created_conversion_page_view": null,
+            "auto_created_conversion_purchase": null,
+            "auto_created_conversion_search": null,
+            "auto_created_conversion_sign_up_initiated": null,
+            "billed_charge_local_micro": [
+              100000000000,
+              200000000000,
+              300000000000,
+              400000000000,
+              500000000000,
+              600000000000,
+              700000000000,
+              800000000000
+            ],
+            "billed_engagements": [
+              100,
+              200,
+              300,
+              400,
+              500,
+              600,
+              700,
+              800
+            ],
+            "card_engagements": [
+              100,
+              200,
+              300,
+              400,
+              500,
+              600,
+              700,
+              800
+            ],
+            "carousel_swipes": null,
+            "clicks": [
+              100,
+              200,
+              300,
+              400,
+              500,
+              600,
+              700,
+              800
+            ],
+            "conversion_custom": {
+              "metric": null,
+              "order_quantity": null,
+              "order_quantity_engagement": null,
+              "order_quantity_view": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null,
+              "sale_amount_engagement": null,
+              "sale_amount_view": null
+            },
+            "conversion_downloads": {
+              "metric": null,
+              "order_quantity": null,
+              "order_quantity_engagement": null,
+              "order_quantity_view": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null,
+              "sale_amount_engagement": null,
+              "sale_amount_view": null
+            },
+            "conversion_purchases": {
+              "assisted": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "metric": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "order_quantity": null,
+              "order_quantity_engagement": null,
+              "order_quantity_view": null,
+              "post_engagement": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "post_view": null,
+              "sale_amount": [
+                100000000,
+                200000000,
+                300000000,
+                400000000,
+                500000000,
+                600000000,
+                700000000,
+                800000000
+              ],
+              "sale_amount_engagement": null,
+              "sale_amount_view": null
+            },
+            "conversion_sign_ups": {
+              "assisted": null,
+              "metric": null,
+              "order_quantity": null,
+              "order_quantity_engagement": null,
+              "order_quantity_view": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null,
+              "sale_amount_engagement": null,
+              "sale_amount_view": null
+            },
+            "conversion_site_visits": {
+              "metric": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "order_quantity": null,
+              "order_quantity_engagement": null,
+              "order_quantity_view": null,
+              "post_engagement": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "post_view": null,
+              "sale_amount": null,
+              "sale_amount_engagement": null,
+              "sale_amount_view": null
+            },
+            "engagements": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "follows": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "impressions": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "likes": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "media_engagements": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "media_views": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "mobile_conversion_achievements_unlocked": {
+              "assisted": null,
+              "order_quantity": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_add_to_carts": {
+              "assisted": null,
+              "order_quantity": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_add_to_wishlists": {
+              "assisted": null,
+              "order_quantity": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_checkouts_initiated": {
+              "assisted": null,
+              "order_quantity": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_content_views": {
+              "assisted": null,
+              "order_quantity": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_downloads": {
+              "order_quantity": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_installs": {
+              "assisted": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "order_quantity": null,
+              "post_engagement": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_invites": {
+              "assisted": null,
+              "order_quantity": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_key_page_views": {
+              "post_engagement": null,
+              "post_view": null
+            },
+            "mobile_conversion_levels_achieved": {
+              "assisted": null,
+              "order_quantity": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_lifetime_value_achievements_unlocked": {
+              "metric": null,
+              "order_quantity": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_lifetime_value_add_to_carts": {
+              "metric": null,
+              "order_quantity": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_lifetime_value_add_to_wishlists": {
+              "metric": null,
+              "order_quantity": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_lifetime_value_checkouts_initiated": {
+              "metric": null,
+              "order_quantity": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_lifetime_value_content_views": {
+              "metric": null,
+              "order_quantity": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_lifetime_value_invites": {
+              "metric": null,
+              "order_quantity": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_lifetime_value_levels_achieved": {
+              "metric": null,
+              "order_quantity": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_lifetime_value_logins": {
+              "metric": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "order_quantity": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_lifetime_value_payment_info_additions": {
+              "metric": null,
+              "order_quantity": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_lifetime_value_purchases": {
+              "metric": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "order_quantity": null,
+              "sale_amount": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ]
+            },
+            "mobile_conversion_lifetime_value_rates": {
+              "metric": null,
+              "order_quantity": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_lifetime_value_reservations": {
+              "metric": null,
+              "order_quantity": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_lifetime_value_searches": {
+              "metric": null,
+              "order_quantity": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_lifetime_value_shares": {
+              "metric": null,
+              "order_quantity": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_lifetime_value_sign_ups": {
+              "metric": null,
+              "order_quantity": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_lifetime_value_spent_credits": {
+              "metric": null,
+              "order_quantity": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_lifetime_value_tutorials_completed": {
+              "metric": null,
+              "order_quantity": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_lifetime_value_updates": {
+              "metric": null,
+              "order_quantity": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_logins": {
+              "assisted": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "order_quantity": null,
+              "post_engagement": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_payment_info_additions": {
+              "assisted": null,
+              "order_quantity": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_purchases": {
+              "assisted": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "order_quantity": null,
+              "post_engagement": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "post_view": null,
+              "sale_amount": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ]
+            },
+            "mobile_conversion_rates": {
+              "assisted": null,
+              "order_quantity": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_re_engages": {
+              "assisted": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "order_quantity": null,
+              "post_engagement": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_reservations": {
+              "assisted": null,
+              "order_quantity": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_searches": {
+              "assisted": null,
+              "order_quantity": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_shares": {
+              "assisted": null,
+              "order_quantity": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_sign_ups": {
+              "assisted": null,
+              "order_quantity": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_site_visits": {
+              "order_quantity": null,
+              "post_engagement": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+              ],
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_spent_credits": {
+              "assisted": null,
+              "order_quantity": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_tutorials_completed": {
+              "assisted": null,
+              "order_quantity": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null
+            },
+            "mobile_conversion_updates": {
+              "assisted": null,
+              "order_quantity": null,
+              "post_engagement": null,
+              "post_view": null,
+              "sale_amount": null
+            },
+            "poll_card_vote": null,
+            "qualified_impressions": null,
+            "replies": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "retweets": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "tweets_send": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "url_clicks": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "video_3s100pct_views": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "video_content_starts": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "video_cta_clicks": null,
+            "video_mrc_views": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "video_total_views": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "video_views_100": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "video_views_25": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "video_views_50": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "video_views_75": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ]
+          },
+          "segment": null
+        }
+      ]
+    }
+  ],
+  "data_type": "stats",
+  "request": {
+    "params": {
+      "country": null,
+      "end_time": "2017-08-28T15:00:00Z",
+      "entity": "CAMPAIGN",
+      "entity_ids": [
+        "xxxxx"
+      ],
+      "granularity": "DAY",
+      "metric_groups": [
+        "BILLING",
+        "ENGAGEMENT",
+        "LIFE_TIME_VALUE_MOBILE_CONVERSION",
+        "MEDIA",
+        "MOBILE_CONVERSION",
+        "VIDEO",
+        "WEB_CONVERSION"
+      ],
+      "placement": "ALL_ON_TWITTER",
+      "platform": null,
+      "segmentation_type": null,
+      "start_time": "2017-08-20T15:00:00Z"
+    }
+  },
+  "time_series_length": 8
+}
