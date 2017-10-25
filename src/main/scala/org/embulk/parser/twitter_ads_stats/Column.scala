@@ -9,10 +9,10 @@ object Column {
   def createEmbulkColumns(metricElementNames: MetricElementNames): Seq[EmbulkColumn] = {
     @scala.annotation.tailrec
     def loop(
-              curIndex: Int,
-              curNames: List[String],
-              acc: Seq[EmbulkColumn]
-            ): Seq[EmbulkColumn] = {
+        curIndex: Int,
+        curNames: List[String],
+        acc: Seq[EmbulkColumn]
+    ): Seq[EmbulkColumn] = {
       curNames match {
         case Nil => acc.reverse
         case x :: xs =>
@@ -23,7 +23,6 @@ object Column {
           )
       }
     }
-
 
     val baseColumns = Seq(
       new EmbulkColumn(0, "id", Types.STRING),
@@ -42,9 +41,9 @@ object Column {
 }
 
 case class Column(
-                   id: String,
-                   date: LocalDate,
-                   segment: Option[String],
-                   placement: String,
-                   metricsGroup: Map[String, MetricsGroup]
-                 )
+    id: String,
+    date: LocalDate,
+    segment: Option[String],
+    placement: String,
+    metricsGroup: Map[String, MetricsGroup]
+)

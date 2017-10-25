@@ -1,6 +1,6 @@
 package org.embulk.parser.twitter_ads_stats
 
-import spray.json.{JsNull, JsNumber, JsObject, pimpAny}
+import spray.json.{pimpAny, JsNull, JsNumber, JsObject}
 
 class MetricsGroupJsonSpec extends UnitSpec {
   "json write" in {
@@ -11,8 +11,8 @@ class MetricsGroupJsonSpec extends UnitSpec {
     val actual = v.toJson
 
     val expected = JsObject(
-      "a" -> JsNumber(3),
-      "b" -> JsNumber(6),
+      "a"   -> JsNumber(3),
+      "b"   -> JsNumber(6),
       "c_e" -> JsNull
     )
     assert(actual == expected)

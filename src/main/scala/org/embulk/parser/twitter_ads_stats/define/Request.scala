@@ -3,22 +3,22 @@ package org.embulk.parser.twitter_ads_stats.define
 import java.time.{LocalDate, LocalDateTime}
 
 case class Request(
-                    params: Params
-                  )
+    params: Params
+)
 
 object Request {
   val fieldNames: Array[String] = FieldNameUtil.fieldList[Request]
 }
 
 case class Params(
-                   start_time: LocalDateTime,
-                   end_time: LocalDateTime,
-                   placement: String
-                 ) {
+    start_time: LocalDateTime,
+    end_time: LocalDateTime,
+    placement: String
+) {
   require(!start_time.isAfter(end_time))
 
   val startDate = start_time.toLocalDate
-  val endDate = end_time.toLocalDate
+  val endDate   = end_time.toLocalDate
 
   /**
     * MetricTimeSeries の期間
@@ -29,7 +29,7 @@ case class Params(
     def loop(curDate: LocalDate, acc: List[LocalDate]): List[LocalDate] = {
       acc match {
         case x :: _ if !x.isBefore(endDate.minusDays(1)) => acc.reverse
-        case _ => loop(curDate.plusDays(1), curDate :: acc)
+        case _                                           => loop(curDate.plusDays(1), curDate :: acc)
       }
     }
 

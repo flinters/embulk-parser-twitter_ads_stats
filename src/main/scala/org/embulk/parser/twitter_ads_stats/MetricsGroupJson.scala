@@ -8,7 +8,7 @@ object MetricsGroupJson {
 
     private def toJValue(element: Option[Long]): JsValue = element match {
       case Some(e) => e.toJson
-      case None => JsNull
+      case None    => JsNull
     }
 
     override def write(obj: MetricsGroup): JsValue = {

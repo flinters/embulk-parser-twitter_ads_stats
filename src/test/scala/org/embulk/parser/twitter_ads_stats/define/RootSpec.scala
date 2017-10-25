@@ -20,11 +20,11 @@ class RootSpec extends UnitSpec {
         "",
         Map(
           "media" -> Map(
-            "media_views" -> Some(1),
+            "media_views"       -> Some(1),
             "media_engagements" -> None
           ),
           "billing" -> Map(
-            "billed_engagements" -> Some(1),
+            "billed_engagements"        -> Some(1),
             "billed_charge_local_micro" -> Some(1)
           ),
           "web_conversion" -> Map(
@@ -39,11 +39,11 @@ class RootSpec extends UnitSpec {
         "",
         Map(
           "media" -> Map(
-            "media_views" -> Some(2),
+            "media_views"       -> Some(2),
             "media_engagements" -> None
           ),
           "billing" -> Map(
-            "billed_engagements" -> Some(2),
+            "billed_engagements"        -> Some(2),
             "billed_charge_local_micro" -> Some(2)
           ),
           "web_conversion" -> Map(
@@ -58,13 +58,13 @@ class RootSpec extends UnitSpec {
         "",
         Map(
           "media" -> Map(
-            "media_views" -> Some(10),
+            "media_views"       -> Some(10),
             "media_engagements" -> None
           ),
           "billing" -> Map(
-              "billed_engagements" -> Some(10),
-              "billed_charge_local_micro" -> Some(10)
-            ),
+            "billed_engagements"        -> Some(10),
+            "billed_charge_local_micro" -> Some(10)
+          ),
           "web_conversion" -> Map(
             "conversion_purchases_assisted" -> Some(10)
           )
@@ -77,11 +77,11 @@ class RootSpec extends UnitSpec {
         "",
         Map(
           "media" -> Map(
-            "media_views" -> Some(20),
+            "media_views"       -> Some(20),
             "media_engagements" -> None
           ),
           "billing" -> Map(
-            "billed_engagements" -> Some(20),
+            "billed_engagements"        -> Some(20),
             "billed_charge_local_micro" -> Some(20)
           ),
           "web_conversion" -> Map(
@@ -96,13 +96,13 @@ class RootSpec extends UnitSpec {
         "",
         Map(
           "media" -> Map(
-            "media_views" -> Some(1),
+            "media_views"       -> Some(1),
             "media_engagements" -> None
           ),
           "billing" -> Map(
-              "billed_engagements" -> Some(1),
-              "billed_charge_local_micro" -> Some(1)
-            ),
+            "billed_engagements"        -> Some(1),
+            "billed_charge_local_micro" -> Some(1)
+          ),
           "web_conversion" -> Map(
             "conversion_purchases_assisted" -> Some(1)
           )
@@ -115,11 +115,11 @@ class RootSpec extends UnitSpec {
         "",
         Map(
           "media" -> Map(
-            "media_views" -> Some(2),
+            "media_views"       -> Some(2),
             "media_engagements" -> None
           ),
           "billing" -> Map(
-            "billed_engagements" -> Some(2),
+            "billed_engagements"        -> Some(2),
             "billed_charge_local_micro" -> Some(2)
           ),
           "web_conversion" -> Map(
@@ -134,13 +134,13 @@ class RootSpec extends UnitSpec {
         "",
         Map(
           "media" -> Map(
-            "media_views" -> Some(10),
+            "media_views"       -> Some(10),
             "media_engagements" -> None
           ),
           "billing" -> Map(
-              "billed_engagements" -> Some(10),
-              "billed_charge_local_micro" -> Some(10)
-            ),
+            "billed_engagements"        -> Some(10),
+            "billed_charge_local_micro" -> Some(10)
+          ),
           "web_conversion" -> Map(
             "conversion_purchases_assisted" -> Some(10)
           )
@@ -153,11 +153,11 @@ class RootSpec extends UnitSpec {
         "",
         Map(
           "media" -> Map(
-            "media_views" -> Some(20),
+            "media_views"       -> Some(20),
             "media_engagements" -> None
           ),
           "billing" -> Map(
-            "billed_engagements" -> Some(20),
+            "billed_engagements"        -> Some(20),
             "billed_charge_local_micro" -> Some(20)
           ),
           "web_conversion" -> Map(
@@ -192,9 +192,9 @@ class RootSpec extends UnitSpec {
     val names = MetricElementNames(
       Map(
         "media" ->
-          Seq(
-            "media_views"
-          )
+        Seq(
+          "media_views"
+        )
       )
     )
 
@@ -281,10 +281,10 @@ object RootSpec {
             IDData(
               metrics = Metrics(
                 Map(
-                  "billed_engagements" -> Some(Vector(1, 2)),
-                  "billed_charge_local_micro" -> Some(Vector(1, 2)),
-                  "media_views" -> Some(Vector(1, 2)),
-                  "media_engagements" -> None,
+                  "billed_engagements"            -> Some(Vector(1, 2)),
+                  "billed_charge_local_micro"     -> Some(Vector(1, 2)),
+                  "media_views"                   -> Some(Vector(1, 2)),
+                  "media_engagements"             -> None,
                   "conversion_purchases_assisted" -> Some(Vector(1, 2))
                 )
               ),
@@ -293,10 +293,10 @@ object RootSpec {
             IDData(
               metrics = Metrics(
                 Map(
-                  "billed_engagements" -> Some(Vector(10, 20)),
-                  "billed_charge_local_micro" -> Some(Vector(10, 20)),
-                  "media_views" -> Some(Vector(10, 20)),
-                  "media_engagements" -> None,
+                  "billed_engagements"            -> Some(Vector(10, 20)),
+                  "billed_charge_local_micro"     -> Some(Vector(10, 20)),
+                  "media_views"                   -> Some(Vector(10, 20)),
+                  "media_engagements"             -> None,
                   "conversion_purchases_assisted" -> Some(Vector(10, 20))
                 )
               ),
@@ -310,10 +310,10 @@ object RootSpec {
             IDData(
               metrics = Metrics(
                 Map(
-                  "billed_engagements" -> Some(Vector(1, 2)),
-                  "billed_charge_local_micro" -> Some(Vector(1, 2)),
-                  "media_views" -> Some(Vector(1, 2)),
-                  "media_engagements" -> None,
+                  "billed_engagements"            -> Some(Vector(1, 2)),
+                  "billed_charge_local_micro"     -> Some(Vector(1, 2)),
+                  "media_views"                   -> Some(Vector(1, 2)),
+                  "media_engagements"             -> None,
                   "conversion_purchases_assisted" -> Some(Vector(1, 2))
                 )
               ),
@@ -322,10 +322,10 @@ object RootSpec {
             IDData(
               metrics = Metrics(
                 Map(
-                  "billed_engagements" -> Some(Vector(10, 20)),
-                  "billed_charge_local_micro" -> Some(Vector(10, 20)),
-                  "media_views" -> Some(Vector(10, 20)),
-                  "media_engagements" -> None,
+                  "billed_engagements"            -> Some(Vector(10, 20)),
+                  "billed_charge_local_micro"     -> Some(Vector(10, 20)),
+                  "media_views"                   -> Some(Vector(10, 20)),
+                  "media_engagements"             -> None,
                   "conversion_purchases_assisted" -> Some(Vector(10, 20))
                 )
               ),

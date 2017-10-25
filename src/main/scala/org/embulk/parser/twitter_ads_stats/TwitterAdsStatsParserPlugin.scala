@@ -26,13 +26,13 @@ class TwitterAdsStatsParserPlugin extends ParserPlugin {
 
   override def run(taskSource: TaskSource, schema: Schema, input: FileInput, output: PageOutput): Unit = {
 
-    val task = taskSource.loadTask(classOf[PluginTask])
+    val task                = taskSource.loadTask(classOf[PluginTask])
     val stopOnInvalidRecord = task.getStopOnInvalidRecord
 
     LoanPattern(new PageBuilder(Exec.getBufferAllocator, schema, output)) { pb =>
       while (input.nextFile()) {
         (for {
-          root <- createRootFrom(input)
+          root    <- createRootFrom(input)
           columns <- root.resolveColumns(metricElementNames)
         } yield addRecord(pb, columns, root)) match {
           case Right(_) =>
@@ -54,15 +54,15 @@ class TwitterAdsStatsParserPlugin extends ParserPlugin {
         (column, embulkColumn.getName) match {
           case (Column(id, _, _, _, _), "id") =>
             pb.setString(embulkColumn, id)
-          case (Column(_, date, _, _,_), "date") =>
+          case (Column(_, date, _, _, _), "date") =>
             pb.setString(embulkColumn, date.toString)
-          case (Column(_, _, Some(segment),_, _), "segment") =>
+          case (Column(_, _, Some(segment), _, _), "segment") =>
             pb.setString(embulkColumn, segment)
-          case (Column(_, _, None,_, _), "segment") =>
+          case (Column(_, _, None, _, _), "segment") =>
             pb.setNull(embulkColumn)
-          case (Column(_, _, _,placement, _), "placement") =>
+          case (Column(_, _, _, placement, _), "placement") =>
             pb.setString(embulkColumn, placement)
-          case (Column(_, _, _, _,metricsGroup), key) =>
+          case (Column(_, _, _, _, metricsGroup), key) =>
             metricsGroup.get(key) match {
               case Some(m) =>
                 pb.setJson(
@@ -84,7 +84,7 @@ class TwitterAdsStatsParserPlugin extends ParserPlugin {
     val stream = new FileInputInputStream(input)
     try {
       val jsValue = scala.io.Source.fromInputStream(stream).mkString.parseJson
-      val root = new RootJson(metricElementNames).RootReader.read(jsValue)
+      val root    = new RootJson(metricElementNames).RootReader.read(jsValue)
       Right(root)
     } catch {
       case NonFatal(e) => Left(new InvalidInputFileException(e))
@@ -94,5 +94,5 @@ class TwitterAdsStatsParserPlugin extends ParserPlugin {
 
 object TwitterAdsStatsParserPlugin {
   val logger: Logger = Exec.getLogger(classOf[TwitterAdsStatsParserPlugin])
-  val jsonParser = new JsonParser
+  val jsonParser     = new JsonParser
 }

@@ -2,7 +2,7 @@ package org.embulk.parser
 
 package object twitter_ads_stats {
   type MetricTimeSeries = Option[Vector[Long]]
-  type MetricsGroup = Map[String, Option[Long]]
+  type MetricsGroup     = Map[String, Option[Long]]
 
   val metricElementNames = MetricElementNames(
     Map(
