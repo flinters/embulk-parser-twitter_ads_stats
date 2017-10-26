@@ -44,8 +44,8 @@ class MetricsJsonSpec extends UnitSpec {
     val actual = new RootJson(metricElementNames).MetricsReader.read(jsValue)
     val expected = Metrics(
       Map(
-        "a" -> Some(Vector(510, 494, 364)),
-        "b" -> Some(Vector(1, 2, 3)),
+        "a"   -> Some(Vector(510, 494, 364)),
+        "b"   -> Some(Vector(1, 2, 3)),
         "c_e" -> Some(Vector(1, 2, 3)),
         "c_f" -> None,
         "d_e" -> Some(Vector(2, 3, 4)),

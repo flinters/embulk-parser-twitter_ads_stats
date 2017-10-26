@@ -18,9 +18,12 @@ case class MetricElementNames(names: Map[String, Seq[String]]) {
 
   import MetricElementNames._
 
-  def getSortedMetricsGroupNames:List[String] = names.keys.toList.sorted
+  def getSortedMetricsGroupNames: List[String] = names.keys.toList.sorted
 
-  private[twitter_ads_stats] def resolveMetrics(resolveMetricTimeSeries: (List[String], Option[JsValue]) => MetricTimeSeries, json: JsObject): Metrics =
+  private[twitter_ads_stats] def resolveMetrics(
+      resolveMetricTimeSeries: (List[String], Option[JsValue]) => MetricTimeSeries,
+      json: JsObject
+  ): Metrics =
     Metrics(
       names.flatMap { v =>
         v._2.map { value =>

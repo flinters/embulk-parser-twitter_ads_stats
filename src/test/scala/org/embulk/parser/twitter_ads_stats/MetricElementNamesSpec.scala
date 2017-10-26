@@ -6,7 +6,7 @@ class MetricElementNamesSpec extends UnitSpec {
     val names = MetricElementNames(
       Map("b" -> emptySeq, "a" -> emptySeq, "c" -> emptySeq)
     )
-    val actual = names.getSortedMetricsGroupNames
+    val actual   = names.getSortedMetricsGroupNames
     val expected = List("a", "b", "c")
 
     assert(actual == expected)

@@ -13,7 +13,7 @@ class RootJson(metricElementNames: MetricElementNames) extends DefaultJsonProtoc
     private def readMetricTimeSeries(jsValue: JsValue): MetricTimeSeries = {
       jsValue match {
         case JsArray(arr) => Some(arr.map(_.convertTo[Long]))
-        case _ => None
+        case _            => None
       }
     }
 
