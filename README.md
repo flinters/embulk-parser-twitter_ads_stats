@@ -1,10 +1,13 @@
 # Twitter Ads Stats parser plugin for Embulk
 
-[![Build Status](https://travis-ci.org/septeni-original/embulk-parser-twitter_ads_stats.svg?branch=ci)](https://travis-ci.org/septeni-original/embulk-parser-twitter_ads_stats)
+[![Build Status](https://travis-ci.org/septeni-original/embulk-parser-twitter_ads_stats.svg?branch=master)](https://travis-ci.org/septeni-original/embulk-parser-twitter_ads_stats)
 
 This plugin parse [Twitter Ads Stats](https://developer.twitter.com/en/docs/ads/analytics/overview/metrics-and-segmentation) json file.
 
-##Parse Logic
+## Notice
+This plugin is an EXPERIMENTAL and support only Java8.
+
+## Parse Logic
 1. Flatten to metrics by date.
 2. Group Metrics into Metrics Group by json type.
 
@@ -30,7 +33,7 @@ I suppose this kind of [input file](https://github.com/septeni-original/embulk-p
 in:
   type: any file input plugin type
   parser:
-    type: sample
+    type: twitter_ads_stats
     stop_on_invalid_record: true
 ```
 
@@ -77,5 +80,5 @@ sbt test
 
 ## Acknowledgement
 
-I developed this library with reference to [embulk-parser-firebase_avro](https://github.com/smdmts/embulk-parser-firebase_avro)
+I developed this library with reference to [embulk-parser-firebase_avro](https://github.com/smdmts/embulk-parser-firebase_avro).  
 Thank you very much.
