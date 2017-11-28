@@ -1,6 +1,6 @@
 package org.embulk.parser.twitter_ads_stats.define
 
-import java.time.{LocalDate, LocalDateTime}
+import java.time.LocalDate
 
 case class Request(
     params: Params
@@ -11,14 +11,15 @@ object Request {
 }
 
 case class Params(
-    start_time: LocalDateTime,
-    end_time: LocalDateTime,
+    start_time: StatsDateTime,
+    end_time: StatsDateTime,
     placement: String
 ) {
-  require(!start_time.isAfter(end_time))
+  require(!start_time.utcDateTime.isAfter(end_time.utcDateTime))
+  require(start_time.utcDateTime.toLocalTime == end_time.utcDateTime.toLocalTime)
 
-  val startDate = start_time.toLocalDate
-  val endDate   = end_time.toLocalDate
+  val startDate = start_time.adAccountLocalDate
+  val endDate   = end_time.adAccountLocalDate
 
   /**
     * MetricTimeSeries の期間
