@@ -15,8 +15,8 @@ case class Params(
     end_time: StatsDateTime,
     placement: String
 ) {
-  require(!start_time.utcDateTime.isAfter(end_time.utcDateTime))
-  require(start_time.utcDateTime.toLocalTime == end_time.utcDateTime.toLocalTime)
+  require(!start_time.isAfter(end_time))
+  require(start_time.isSameOffsetTime(end_time))
 
   val startDate = start_time.adAccountLocalDate
   val endDate   = end_time.adAccountLocalDate
