@@ -1,8 +1,5 @@
 package org.embulk.parser.twitter_ads_stats.define
 
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-
 import org.embulk.parser.twitter_ads_stats.{MetricElementNames, MetricTimeSeries}
 import spray.json.{DefaultJsonProtocol, DeserializationException, JsArray, JsString, JsValue, RootJsonReader}
 
@@ -68,11 +65,9 @@ class RootJson(metricElementNames: MetricElementNames) extends DefaultJsonProtoc
         val fieldNames = Params.fieldNames.toList
         json.asJsObject.getFields(fieldNames: _*) match {
           case Seq(JsString(a), JsString(b), c) =>
-            val formatter = DateTimeFormatter.ISO_DATE_TIME
-            //todo DateTimeFormatterでフォーマットが出来ない場合の例外処理
             Params(
-              LocalDateTime.parse(a, formatter),
-              LocalDateTime.parse(b, formatter),
+              StatsDateTime(a),
+              StatsDateTime(b),
               c.convertTo[String]
             )
           case x => throw DeserializationException(msg = s"params can't deserialize json: $x", fieldNames = fieldNames)

@@ -175,8 +175,8 @@ class RootSpec extends UnitSpec {
     val actual = createRoot(
       Request(
         params = Params(
-          start_time = LocalDateTime.of(2017, 1, 1, 1, 1, 1),
-          end_time = LocalDateTime.of(2017, 1, 4, 1, 1, 1),
+          start_time = StatsDateTime("2017-01-01T01:01:01Z"),
+          end_time = StatsDateTime("2017-01-04T01:01:01Z"),
           placement = ""
         )
       )
@@ -201,8 +201,8 @@ class RootSpec extends UnitSpec {
     val actual = createRoot(
       Request(
         params = Params(
-          start_time = LocalDateTime.of(2017, 1, 1, 1, 1, 1),
-          end_time = LocalDateTime.of(2017, 1, 1, 1, 1, 1),
+          start_time = StatsDateTime("2017-01-01T01:01:01Z"),
+          end_time = StatsDateTime("2017-01-01T01:01:01Z"),
           placement = ""
         )
       )
@@ -265,8 +265,8 @@ object RootSpec {
   val defaultRoot: Root = createRoot(
     Request(
       params = Params(
-        start_time = LocalDateTime.of(2017, 1, 1, 1, 1, 1),
-        end_time = LocalDateTime.of(2017, 1, 3, 1, 1, 1),
+        start_time = StatsDateTime("2017-01-01T01:01:01Z"),
+        end_time = StatsDateTime("2017-01-03T01:01:01Z"),
         placement = ""
       )
     )
