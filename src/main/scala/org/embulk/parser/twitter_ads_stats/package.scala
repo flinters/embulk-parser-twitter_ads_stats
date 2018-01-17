@@ -122,7 +122,17 @@ package object twitter_ads_stats {
         "mobile_conversion_key_page_views.post_engagement",
         "mobile_conversion_key_page_views.assisted",
         "mobile_conversion_key_page_views.order_quantity.order_quantity",
-        "mobile_conversion_key_page_views.sale_amount"
+        "mobile_conversion_key_page_views.sale_amount",
+        "mobile_conversion_purchases_post_view",
+        "mobile_conversion_purchases_order_quantity",
+        "mobile_conversion_purchases_assisted",
+        "mobile_conversion_purchases_post_engagement",
+        "mobile_conversion_purchases_sale_amount",
+        "mobile_conversion_downloads_post_view",
+        "mobile_conversion_downloads_order_quantity",
+        "mobile_conversion_downloads_assisted",
+        "mobile_conversion_downloads_post_engagement",
+        "mobile_conversion_downloads_sale_amount"
       ),
       "video" -> Seq(
         "video_total_views",
