@@ -10,6 +10,7 @@ import spray.json.{pimpAny, pimpString}
 import scala.util.control.NonFatal
 import scala.collection.JavaConverters._
 import MetricsGroupJson._
+import SegmentJson._
 import org.embulk.parser.twitter_ads_stats.define.{Root, RootJson}
 
 class TwitterAdsStatsParserPlugin extends ParserPlugin {
@@ -57,7 +58,7 @@ class TwitterAdsStatsParserPlugin extends ParserPlugin {
           case (Column(_, date, _, _, _), "date") =>
             pb.setString(embulkColumn, date.toString)
           case (Column(_, _, Some(segment), _, _), "segment") =>
-            pb.setString(embulkColumn, segment)
+            pb.setJson(embulkColumn, jsonParser.parse(segment.toJson.compactPrint))
           case (Column(_, _, None, _, _), "segment") =>
             pb.setNull(embulkColumn)
           case (Column(_, _, _, placement, _), "placement") =>

@@ -22,10 +22,10 @@ class ColumnSpec extends UnitSpec {
     val expected = Seq(
       new EmbulkColumn(0, "id", Types.STRING),
       new EmbulkColumn(1, "date", Types.STRING),
-      new EmbulkColumn(2, "segment", Types.STRING),
+      new EmbulkColumn(2, "segment", Types.JSON),
       new EmbulkColumn(3, "placement", Types.STRING),
       new EmbulkColumn(4, "billing", Types.JSON),
-      new EmbulkColumn(5, "video", Types.JSON),
+      new EmbulkColumn(5, "video", Types.JSON)
     )
 
     assert(actual == expected)

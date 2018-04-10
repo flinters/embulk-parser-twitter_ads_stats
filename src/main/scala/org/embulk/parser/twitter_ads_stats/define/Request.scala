@@ -13,7 +13,8 @@ object Request {
 case class Params(
     start_time: StatsDateTime,
     end_time: StatsDateTime,
-    placement: String
+    placement: String,
+    segmentation_type: Option[String]
 ) {
   require(!start_time.isAfter(end_time))
   require(start_time.isSameOffsetTime(end_time))

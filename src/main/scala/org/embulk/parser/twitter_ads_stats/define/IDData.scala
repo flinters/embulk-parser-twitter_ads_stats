@@ -4,7 +4,7 @@ import java.time.LocalDate
 
 import org.embulk.parser.twitter_ads_stats._
 
-case class IDData(metrics: Metrics, segment: Option[String]) {
+case class IDData(metrics: Metrics, segment: Option[Segment]) {
   private def resolveColumn(
       id: String,
       metricElementNames: MetricElementNames,

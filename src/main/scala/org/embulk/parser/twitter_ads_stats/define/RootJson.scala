@@ -1,6 +1,6 @@
 package org.embulk.parser.twitter_ads_stats.define
 
-import org.embulk.parser.twitter_ads_stats.{MetricElementNames, MetricTimeSeries}
+import org.embulk.parser.twitter_ads_stats.{MetricElementNames, MetricTimeSeries, Segment}
 import spray.json.{DefaultJsonProtocol, DeserializationException, JsArray, JsString, JsValue, RootJsonReader}
 
 class RootJson(metricElementNames: MetricElementNames) extends DefaultJsonProtocol {
@@ -36,7 +36,7 @@ class RootJson(metricElementNames: MetricElementNames) extends DefaultJsonProtoc
         case Seq(a: JsValue, b) =>
           IDData(
             MetricsReader.read(a.asJsObject),
-            b.convertTo[Option[String]]
+            b.convertTo[Option[Segment]]
           )
         case x => throw DeserializationException(msg = s"id_data can't deserialize json: $x", fieldNames = fieldNames)
       }
@@ -64,11 +64,12 @@ class RootJson(metricElementNames: MetricElementNames) extends DefaultJsonProtoc
       override def read(json: JsValue): Params = {
         val fieldNames = Params.fieldNames.toList
         json.asJsObject.getFields(fieldNames: _*) match {
-          case Seq(JsString(a), JsString(b), c) =>
+          case Seq(JsString(a), JsString(b), c, segmentationType) =>
             Params(
               StatsDateTime(a),
               StatsDateTime(b),
-              c.convertTo[String]
+              c.convertTo[String],
+              segmentationType.convertTo[Option[String]]
             )
           case x => throw DeserializationException(msg = s"params can't deserialize json: $x", fieldNames = fieldNames)
         }
