@@ -177,7 +177,8 @@ class RootSpec extends UnitSpec {
         params = Params(
           start_time = StatsDateTime("2017-01-01T01:01:01Z"),
           end_time = StatsDateTime("2017-01-04T01:01:01Z"),
-          placement = ""
+          placement = "",
+          segmentation_type = None
         )
       )
     ).resolveColumns(metricElementNames)
@@ -203,7 +204,8 @@ class RootSpec extends UnitSpec {
         params = Params(
           start_time = StatsDateTime("2017-01-01T01:01:01Z"),
           end_time = StatsDateTime("2017-01-01T01:01:01Z"),
-          placement = ""
+          placement = "",
+          segmentation_type = None
         )
       )
     ).resolveColumns(names)
@@ -267,7 +269,8 @@ object RootSpec {
       params = Params(
         start_time = StatsDateTime("2017-01-01T01:01:01Z"),
         end_time = StatsDateTime("2017-01-03T01:01:01Z"),
-        placement = ""
+        placement = "",
+        segmentation_type = None
       )
     )
   )

@@ -27,7 +27,7 @@ object Column {
     val baseColumns = Seq(
       new EmbulkColumn(0, "id", Types.STRING),
       new EmbulkColumn(1, "date", Types.STRING),
-      new EmbulkColumn(2, "segment", Types.STRING),
+      new EmbulkColumn(2, "segment", Types.JSON),
       new EmbulkColumn(3, "placement", Types.STRING)
     )
 
@@ -43,7 +43,7 @@ object Column {
 case class Column(
     id: String,
     date: LocalDate,
-    segment: Option[String],
+    segment: Option[Segment],
     placement: String,
     metricsGroup: Map[String, MetricsGroup]
 )
