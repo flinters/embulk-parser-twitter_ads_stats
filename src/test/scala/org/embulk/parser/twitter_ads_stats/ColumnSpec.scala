@@ -28,7 +28,6 @@ class ColumnSpec extends UnitSpec {
       new EmbulkColumn(5, "video", Types.JSON)
     )
 
-    println(s"actual = ${actual}")
     assert(actual == expected)
   }
 }
