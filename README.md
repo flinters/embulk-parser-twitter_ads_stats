@@ -43,7 +43,7 @@ in:
 *************************** 1 ***************************
                id (string) : xxxxx
              date (string) : 2017-08-20
-          segment (string) :
+          segment (  json) :
         placement (string) : ALL_ON_TWITTER
           billing (  json) : {"billed_charge_local_micro":100000000000,"billed_engagements":100}
        engagement (  json) : {"likes":1,"engagements":1,"app_clicks":100,"clicks":100,"card_engagements":100,"qualified_impressions":null,"retweets":1,"impressions":1,"follows":1,"replies":1,"url_clicks":1}
@@ -54,7 +54,7 @@ mobile_conversion (  json) : {"mobile_conversion_rates_order_quantity":null,"mob
 *************************** 2 ***************************
                id (string) : xxxxx
              date (string) : 2017-08-21
-          segment (string) : {"segment_name":"hoge","segment_value":"fuga"}
+          segment (  json) : {"segment_name":"hoge","segment_value":"fuga"}
         placement (string) : ALL_ON_TWITTER
           billing (  json) : {"billed_charge_local_micro":200000000000,"billed_engagements":200}
        engagement (  json) : {"likes":2,"engagements":2,"app_clicks":200,"clicks":200,"card_engagements":200,"qualified_impressions":null,"retweets":2,"impressions":2,"follows":2,"replies":2,"url_clicks":2}
